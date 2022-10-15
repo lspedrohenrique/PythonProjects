@@ -8,7 +8,7 @@ total_de_tentativas = 3
 
 while(total_de_tentativas > 0):
 
-    print("Tentantiva número", total_de_tentativas)
+    print("Tentantiva número {}".format(total_de_tentativas)) #String interpolation
 
     chute = int(input("Digite o seu chute: "))
 
@@ -27,3 +27,7 @@ while(total_de_tentativas > 0):
             print("Você errou! O seu chute foi menor do que o número secreto.")
 
     total_de_tentativas = total_de_tentativas - 1
+
+print("****")
+print("Fim!")
+print("****")
