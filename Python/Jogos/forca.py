@@ -8,3 +8,6 @@ def forca():
     print("****")
     print("Fim!")
     print("****")
+
+if(__name__ == "__main__"):
+    forca()
