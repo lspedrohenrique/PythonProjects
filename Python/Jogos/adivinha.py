@@ -26,7 +26,7 @@ def adivinha():
     else:
         total_de_tentativas = 3
 
-    for rodada in range(1, total_de_tentativas + 1) : #Para rodada de 1 ate total de tentativas + 1 faça
+    for rodada in range(1, total_de_tentativas + 1): #Para rodada de 1 ate total de tentativas + 1 faça
 
         print("Tentativa {} de {}".format(rodada, total_de_tentativas)) #String interpolation
 
