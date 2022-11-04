@@ -1,37 +1,39 @@
-
-def forca():
-
+def jogar():
     print("*********************************")
-    print("***Bem vindo ao jogo de Forca!***")
+    print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
-    palavra_secreta = "banana"
+    palavra_secreta = "maça".upper()
+    letras_acertadas = ["_" for letra in palavra_secreta] #Use "_" para cada letra dentro de palavra secreta // List Comprehensions
 
-    letras_secretas = ["_", "_", "_", "_", "_", "_"]
 
-    enforcou = False #Enforcou? Não
+    erros = 0
+    print(len(palavra_secreta))
+    print(letras_acertadas)
 
-    acertou = False #Acertou? Não
+    while(True):
 
-    print(letras_secretas)
+        chute = input("Qual letra? ")
+        chute = chute.strip().upper()
 
-    while(not enforcou and not acertou): #While só executa o bloco caso seja verdadeiro, sendo falso o python pula para o próximo comando
+        if(chute in palavra_secreta):
+            index = 0
+            for letra in palavra_secreta:
+                if(chute == letra):
+                    letras_acertadas[index] = letra
+                index += 1
+        else:
+            erros += 1
 
-        chute = input("Qual letra?: ")
-        chute = chute.strip() #A função .strip() corrige qualquer entrada errada com espaços a mais
+        if (erros == 6):
+            break
+        if ("_" not in letras_acertadas):
+            break
+        print(letras_acertadas)
 
-        indice = 0
 
-        for letra in palavra_secreta:
-            if(chute.upper() == letra.upper()): #A Função .upper() transforma toda a string aplicada em caracteres maiúsculos 
-                letras_secretas[indice] = letra.upper() #Atribuindo a letra na posição do índice 
-            indice = indice + 1
-
-        print(letras_secretas)
-
-    print("****")
-    print("Fim!")
-    print("****")
-
-if(__name__ == "__main__"):
-    forca()
+    if("_" not in letras_acertadas):
+        print("Você ganhou!!")
+    else:
+        print("Você perdeu!!")
+    print("Fim do jogo")
