@@ -1,5 +1,0 @@
-arq = open("meu_arquivo.txt") 
-linhas = arq.readline()
-print(linhas.strip())
-linhas = arq.readline()
-print(linhas.strip())
