@@ -11,7 +11,7 @@ jogo = int(input("Informe qual quer jogar: "))
 
 if(jogo == 1):
     print("Abrindo jogo da Forca...")
-    forca.forca()
+    forca.jogar()
 elif(jogo == 2):
     print("Abrindo jogo de Adivinhação...")
     adivinha.adivinha()

@@ -1,14 +1,26 @@
+import random
+
 def jogar():
     print("*********************************")
     print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
-    palavra_secreta = "maça".upper()
+    arquivo = open("lista.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+    arquivo.close()
+
+    numero = random.randrange(0,len(palavras))
+
+    palavra_secreta = palavras[numero].upper()
     letras_acertadas = ["_" for letra in palavra_secreta] #Use "_" para cada letra dentro de palavra secreta // List Comprehensions
 
-
     erros = 0
-    print(len(palavra_secreta))
+
     print(letras_acertadas)
 
     while(True):
@@ -28,6 +40,7 @@ def jogar():
         if (erros == 6):
             break
         if ("_" not in letras_acertadas):
+            print(letras_acertadas)
             break
         print(letras_acertadas)
 
@@ -37,3 +50,6 @@ def jogar():
     else:
         print("Você perdeu!!")
     print("Fim do jogo")
+
+if(__name__ == "__main__"):
+    jogar()
