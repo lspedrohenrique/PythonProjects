@@ -1,10 +1,11 @@
 import random
 
-def jogar():
+def imprime_abertura():
     print("*********************************")
     print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
+def carrega_palavra():
     arquivo = open("lista.txt", "r")
     palavras = []
 
@@ -15,9 +16,19 @@ def jogar():
     arquivo.close()
 
     numero = random.randrange(0,len(palavras))
-
     palavra_secreta = palavras[numero].upper()
-    letras_acertadas = ["_" for letra in palavra_secreta] #Use "_" para cada letra dentro de palavra secreta // List Comprehensions
+    return palavra_secreta
+
+def inicializa_letras_acertadas(palavra):
+    return ["_" for letra in palavra]
+
+def jogar():
+
+    imprime_abertura()
+
+    palavra_secreta = carrega_palavra()
+
+    letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
 
     erros = 0
 
