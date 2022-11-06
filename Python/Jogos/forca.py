@@ -22,6 +22,24 @@ def carrega_palavra():
 def inicializa_letras_acertadas(palavra):
     return ["_" for letra in palavra]
 
+def pede_chute():
+    chute = input("Qual letra? ")
+    chute = chute.strip().upper()
+    return chute
+
+def marca_chute_em_letras_acertadas(chute, letras_acertadas, palavra_secreta):
+    index = 0
+    for letra in palavra_secreta:
+        if (chute == letra):
+            letras_acertadas[index] = letra
+        index += 1
+
+def imprime_vencedor():
+    print("Parabéns, você ganhou!!")
+
+def imprime_perdedor():
+    print("Você perdeu!!")
+
 def jogar():
 
     imprime_abertura()
@@ -30,37 +48,29 @@ def jogar():
 
     letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
 
-    erros = 0
-
     print(letras_acertadas)
+
+    erros = 0
 
     while(True):
 
-        chute = input("Qual letra? ")
-        chute = chute.strip().upper()
+        chute = pede_chute() #A função pede_chute retorna a entrada(chute) do usuário.
 
         if(chute in palavra_secreta):
-            index = 0
-            for letra in palavra_secreta:
-                if(chute == letra):
-                    letras_acertadas[index] = letra
-                index += 1
+           marca_chute_em_letras_acertadas(chute, letras_acertadas, palavra_secreta)
         else:
             erros += 1
 
         if (erros == 6):
             break
         if ("_" not in letras_acertadas):
-            print(letras_acertadas)
             break
         print(letras_acertadas)
 
-
     if("_" not in letras_acertadas):
-        print("Você ganhou!!")
+        imprime_vencedor()
     else:
-        print("Você perdeu!!")
-    print("Fim do jogo")
+        imprime_perdedor()
 
 if(__name__ == "__main__"):
     jogar()
