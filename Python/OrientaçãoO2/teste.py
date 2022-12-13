@@ -1,29 +1,10 @@
-class Programa:
-    def __init__(self, ano, genero):
-        self.ano = ano
-        self.genero = genero
-        self.like = 0
+import pyautogui
 
-    def like(self):
-        self.like += 1
+pyautogui.PAUSE = 2
 
-    def deslike(self):
-        self.like -= 1
+pyautogui.click(x=500, y=900)
 
-    @property
-    def mensagem(self):
-        return print("Lançamento no ano {}".format(self.ano))
-
-    @property
-    def likes(self):
-        return self.like
-
-class Filme(Programa):
-    def __init__(self, ano, genero, duracao):
-        super().__init__(ano, genero)
-        self.duracao = duracao
-
-cars = Filme(2006, "Animação", 117)
-
-cars.like()
+while(True):
+    pyautogui.write("I love you")
+    pyautogui.press("enter")
 
