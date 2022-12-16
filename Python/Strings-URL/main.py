@@ -1,6 +1,14 @@
 #URL sendo representada por uma String
 url = "https://bytebank.com/cambio?moedaDestino=dolar&quantidade=100&moedaOrigem=real"
 
+#Sanitização da URL
+url = url.strip() # Poderia ter usado o replace também
+
+#Validação da URL
+if url == "":
+    raise ValueError('A URL está vazia') #Retornando um erro no terminal do tipo valor
+
+
 #Método para retornar o índice de uma String
 indice_interrogacao = url.find('?')
 
