@@ -1,6 +1,6 @@
 #URL sendo representada por uma String
-url = "https://bytebank.com/cambio?moedaDestino=dolar&quantidade=100&moedaOrigem=real"
-
+#url = "https://bytebank.com/cambio?moedaDestino=dolar&quantidade=100&moedaOrigem=real"
+url = ""
 #Sanitização da URL
 url = url.strip() # Poderia ter usado o replace também
 
@@ -11,7 +11,6 @@ if url == "":
 
 #Método para retornar o índice de uma String
 indice_interrogacao = url.find('?')
-
 #Fatiamento de Strings
 url_base = url[:indice_interrogacao]
 
