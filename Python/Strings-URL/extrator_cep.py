@@ -1,3 +1,4 @@
+#Expressões regulares: verifica padrões em uma determinada string
 import re
 
 endereco = "Rua das Flores 72, apartamento 1002, Laranjeiras, Rio de Janeiro, RJ, 23440-120"
